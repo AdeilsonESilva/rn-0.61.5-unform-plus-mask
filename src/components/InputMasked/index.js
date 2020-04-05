@@ -38,7 +38,6 @@ const InputMasked = ({name, label, ...rest}) => {
 
       {/* <TextInput ref={inputRef} defaultValue={defaultValue} {...rest} /> */}
       <TextInputMask
-        type={'cel-phone'}
         options={{
           maskType: 'BRL',
           withDDD: true,

@@ -6,6 +6,8 @@ import InputMasked from './src/components/InputMasked';
 
 const App = () => {
   const [email, setEmail] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [dt, setDt] = useState('');
   const [international, setInternational] = useState('');
   const formRef = useRef(null);
 
@@ -56,9 +58,30 @@ const App = () => {
               style={{borderWidth: 1, margin: 10, height: 50}}
             /> */}
             <InputMasked
+              type={'cel-phone'}
               value={international}
               onChangeText={(text) => setInternational(text)}
               name="international"
+              style={{borderWidth: 1, margin: 10, height: 50}}
+            />
+            <InputMasked
+              type={'cpf'}
+              value={cpf}
+              onChangeText={(text) => setCpf(text)}
+              name="cpf"
+              style={{borderWidth: 1, margin: 10, height: 50}}
+            />
+            <InputMasked
+              type={'datetime'}
+              options={{
+                format: 'YYYY/MM/DD',
+              }}
+              value={dt}
+              onChangeText={(text) => {
+                console.log('text', text);
+                setDt(text);
+              }}
+              name="dt"
               style={{borderWidth: 1, margin: 10, height: 50}}
             />
             <Button
